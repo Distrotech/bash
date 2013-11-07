@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ln -s bash ${3}/bin/sh
