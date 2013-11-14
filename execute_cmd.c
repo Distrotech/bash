@@ -2202,6 +2202,7 @@ execute_pipeline (command, asynchronous, pipe_in, pipe_out, fds_to_close)
   /* If the `lastpipe' option is set with shopt, and job control is not
      enabled, execute the last element of non-async pipelines in the
      current shell environment. */
+#ifdef JOB_CONTROL
   if (lastpipe_opt && job_control == 0 && asynchronous == 0 && pipe_out == NO_PIPE && prev > 0)
     {
       lstdin = move_to_high_fd (0, 0, 255);
@@ -2217,6 +2218,7 @@ execute_pipeline (command, asynchronous, pipe_in, pipe_out, fds_to_close)
 	}
       cmd->flags |= CMD_LASTPIPE;
     }	  
+#endif
   if (prev >= 0)
     add_unwind_protect (close, prev);
 
