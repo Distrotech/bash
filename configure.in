@@ -516,6 +516,7 @@ fi
 TILDE_LIB=-ltilde
 if test $opt_readline = yes; then
 	AC_DEFINE(READLINE)
+	AC_CHECK_LIB(tinfo, tputs)
 	if test "$opt_with_installed_readline" != "no" ; then
 		case "$opt_with_installed_readline" in
 		yes)	RL_INCLUDE= ;;
