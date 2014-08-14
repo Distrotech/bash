@@ -1,4 +1,7 @@
 #!/bin/bash
 
 ln -s bash ${3}/bin/sh
+if [ ! -d ${3}/usr/bin ];then
+  mkdir -p ${3}/usr/bin
+fi;
 ln -s -r ${3}/bin/bash ${3}/usr/bin/bash
