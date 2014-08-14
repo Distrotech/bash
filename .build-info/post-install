@@ -1,3 +1,4 @@
 #!/bin/bash
 
 ln -s bash ${3}/bin/sh
+ln -s -r ${3}/bin/bash ${3}/usr/bin/bash
